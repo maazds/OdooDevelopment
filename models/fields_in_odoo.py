@@ -1,13 +1,24 @@
 from odoo import api, fields, models,_
-
+from datetime import date
 
 class OdooFields(models.Model):
     _name = 'odoo.fields'
-    _rec_name = 'name'
+    _rec_name = 'StudentName'
     _description = 'A Complete model of the fields in odoo'
 
-    name = fields.Char(string='Name', required=True)
-    form_no = fields.Char(string="Form No", required=True,copy=False,readonly=True,default=lambda self:_('New'))
+    StudentName = fields.Char(string='Student Name', required=True)
+    StudentFormNo = fields.Char(string="Form No", required=True,copy=False,readonly=True,default=lambda self:_('New'))
+    StudentRegdNo = fields.Char(string="Registration No.")
+    StudentDOB = fields.Date('Date of Birth')
+    StudentAge = fields.Char('Age',compute ='_student_age')
+
+
+    @api.onchange('StudentDOB')
+    def _student_age(self):
+        today = date.today()
+        
+
+
 
     # b_date = fields.Date(string='DOB', related='name_id.dob')
     # age = fields.Integer(string="Age", compute='_compute_age')
