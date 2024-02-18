@@ -16,6 +16,7 @@ class OdooFields(models.Model):
     @api.onchange('StudentDOB')
     def _student_age(self):
         today = date.today()
+        x = fields.Date.today()
     #     THis is a testing brnach
 
 
