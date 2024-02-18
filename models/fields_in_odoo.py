@@ -17,10 +17,15 @@ class OdooFields(models.Model):
     def _student_age(self):
         today = date.today()
         x = fields.Date.today()
-    #     THis is a testing brnach
+        #THis is a testing brnach
 # THis comment is done by another dev
+<<<<<<< Updated upstream
 # THis is new content 
 # by dev 2
+=======
+# THis is new content
+# by local editing and not ready to update
+>>>>>>> Stashed changes
 
 
 
