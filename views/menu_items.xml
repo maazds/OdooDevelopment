@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+            id="root_menu_view"
+            name="Odoo Development"/>
+    <!--            web_icon="hr,static/description/icon.svg"-->
+    <!--            sequence="185"/>-->
+    <menuitem
+            id="views_id"
+            name="Views"
+            parent="root_menu_view"/>
+    <menuitem
+            id="form_view_id"
+            name="Form/Tree View"
+            parent="views_id"
+            action="fields_odoo_action"/>
+</odoo>
