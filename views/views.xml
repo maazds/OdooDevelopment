@@ -1,18 +1,44 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+<!--    LIst VIew-->
     <record id="fields_view_list" model="ir.ui.view">
         <field name="name">odoo.fields list</field>
         <field name="model">odoo.fields</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
-                <field name="form_no"/>
+                <field name="StudentName"/>
+                <field name="StudentRegdNo"/>
             </tree>
+        </field>
+    </record>
+<!--    form view-->
+     <record id="fields_view_form" model="ir.ui.view">
+        <field name="name">odoo fields form</field>
+        <field name="model">odoo.fields</field>
+        <field name="arch" type="xml">
+           <form>
+               <sheet>
+                   <group>
+                       <group>
+                           <field name="StudentName"/>
+                           <field name="StudentFormNo"/>
+                       </group>
+                       <group>
+                            <field name="StudentRegdNo"/>
+                            <field name="StudentDOB"/>
+                            <field name="StudentAge"/>
+                       </group>
+                   </group>
+                   <group>
+                       <field name="orm_methods"/>
+                   </group>
+               </sheet>
+           </form>
         </field>
     </record>
     <record model="ir.actions.act_window" id="fields_odoo_action">
         <field name="name">odoo Fields</field>
         <field name="res_model">odoo.fields</field>
-        <field name="view_mode">form</field>
+        <field name="view_mode">tree,form</field>
     </record>
 </odoo>
